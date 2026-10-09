@@ -1,0 +1,23 @@
+node_modules/
+dist/
+*.mcpb
+.tmp/
+*.tsbuildinfo
+.env
+.env.*
+.codegraph/
+
+# Personal media: never publish anything from this folder
+pruebas/
+
+# Personal documents and engine outputs
+.pdfcraft-staging-*/
+*.mp4
+*.gif
+*.wav
+*.pdf
+*.docx
+*.p12
+*.pfx
+*.png
+!icon.png

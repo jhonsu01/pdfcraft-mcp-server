@@ -1,0 +1,83 @@
+{
+  "manifest_version": "0.3",
+  "name": "pdfcraft-mcp-server",
+  "version": "1.0.0",
+  "display_name": "PdfCraft Bridge",
+  "description": "Read, split, merge, organize, watermark, protect, redact, fill, sign, convert, compress and OCR PDFs with the PdfCraft editor installed on Windows, macOS or Linux. Not affiliated with PdfCraft or Storytold.",
+  "long_description": "PdfCraft Bridge lets Claude work on PDFs with the PdfCraft you already have installed on Windows, macOS or Linux (tested with 0.4.0), the open-source, Acrobat-class editor written in Rust.\n\n- **Read**: document info, page sizes, fonts, security, signatures; text by page; pages as PNG / JPEG / TIFF.\n- **Pages**: split (every N pages, before pages, by bookmarks or size), merge with page ranges, extract, insert, duplicate, rotate, move, delete, crop, page labels, metadata.\n- **Add**: text and picture watermarks, headers and footers with page numbers and Bates numbers, backgrounds, text boxes, images, links.\n- **Secure**: passwords and permissions (AES-256), true redaction of words, patterns (email, phone, SSN, card, dates) and areas, hidden-information removal, digital signatures.\n- **Forms**: list, auto-detect, fill and flatten.\n- **Convert**: Word, HTML, RTF, text, images, PDF/A; create PDFs from images or text; reduce file size; OCR; compare versions.\n- **Everything else**: run any of PdfCraft's 131 engine tools (comments, bookmarks, accessibility, measurements, JavaScript...).\n\nThe connector drives PdfCraft's own headless engine (pdfcraft-cli). Everything runs locally with no network access; files are never overwritten unless you ask. PdfCraft is an open-source project by Storytold; this connector is not affiliated with or endorsed by them.",
+  "author": {
+    "name": "Jhon Supelano",
+    "url": "https://github.com/jhonsu01"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jhonsu01/pdfcraft-mcp-server.git"
+  },
+  "homepage": "https://github.com/jhonsu01/pdfcraft-mcp-server",
+  "support": "https://github.com/jhonsu01/pdfcraft-mcp-server/issues",
+  "icon": "icon.png",
+  "server": {
+    "type": "node",
+    "entry_point": "dist/bundle.cjs",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/dist/bundle.cjs"],
+      "env": {
+        "PDFCRAFT_DIR": "${user_config.pdfcraft_dir}",
+        "PDFCRAFT_CLI": "${user_config.pdfcraft_cli}",
+        "PDFCRAFT_ROOT": "${user_config.pdfcraft_root}"
+      }
+    }
+  },
+  "user_config": {
+    "pdfcraft_dir": {
+      "type": "directory",
+      "title": "PdfCraft folder",
+      "description": "Install folder of PdfCraft (or PdfCraft.app on macOS). Leave empty to auto-detect: C:\\Program Files\\PdfCraft, /Applications/PdfCraft.app, /usr/bin, /opt/pdfcraft or PATH.",
+      "required": false
+    },
+    "pdfcraft_cli": {
+      "type": "file",
+      "title": "pdfcraft-cli executable (optional)",
+      "description": "Only if it is somewhere else, e.g. where you unzipped pdfcraft-cli-<version>-macos-universal.zip on macOS.",
+      "required": false
+    },
+    "pdfcraft_root": {
+      "type": "directory",
+      "title": "Limit access to this folder (optional)",
+      "description": "When set, PdfCraft may only read and write files inside this folder.",
+      "required": false
+    }
+  },
+  "compatibility": {
+    "platforms": ["win32", "darwin", "linux"],
+    "runtimes": {
+      "node": ">=20.0.0"
+    }
+  },
+  "tools": [
+    { "name": "get_pdf_info", "description": "Pages, sizes, metadata, security, fields, fonts, signatures" },
+    { "name": "extract_text", "description": "Text of some or all pages, optionally saved as .txt" },
+    { "name": "render_pages", "description": "Pages as PNG, JPEG or TIFF images" },
+    { "name": "split_pdf", "description": "Split by page count, page numbers, bookmarks or size" },
+    { "name": "merge_pdfs", "description": "Combine PDFs with optional page ranges" },
+    { "name": "extract_pages", "description": "Copy pages into a new PDF or one file per page" },
+    { "name": "edit_pages", "description": "Insert, duplicate, rotate, move, delete, crop, label pages; metadata" },
+    { "name": "create_pdf", "description": "New PDF from images, text or blank pages" },
+    { "name": "add_content", "description": "Watermarks, headers/footers, backgrounds, text, images, links" },
+    { "name": "protect_pdf", "description": "Add or remove passwords and permissions" },
+    { "name": "redact_pdf", "description": "Permanently remove words, patterns, areas or pages" },
+    { "name": "fill_form", "description": "List, detect, fill and flatten form fields" },
+    { "name": "sign_pdf", "description": "Digitally sign with a .p12/.pfx ID" },
+    { "name": "convert_pdf", "description": "To Word, HTML, RTF, text, images or PDF/A" },
+    { "name": "optimize_pdf", "description": "Reduce file size, optionally removing hidden information" },
+    { "name": "ocr_pdf", "description": "Make scanned PDFs searchable" },
+    { "name": "compare_pdfs", "description": "Differences between two versions, with report" },
+    { "name": "list_pdf_tools", "description": "The 131 PdfCraft engine tools and their schemas" },
+    { "name": "run_pdf_tools", "description": "Run any PdfCraft engine tools in one session" },
+    { "name": "open_in_pdfcraft", "description": "Open PDFs in the PdfCraft app" },
+    { "name": "get_pdfcraft_status", "description": "Check the PdfCraft installation, version and OCR" }
+  ],
+  "keywords": ["pdfcraft", "pdf", "split", "merge", "watermark", "redact", "forms", "sign", "ocr", "pdf-a", "windows", "macos", "linux"],
+  "license": "Apache-2.0"
+}

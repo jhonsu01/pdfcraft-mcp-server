@@ -1,0 +1,59 @@
+{
+  "name": "pdfcraft-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for PdfCraft: read, split, merge, organize, watermark, protect, redact, fill, sign, convert, compress and OCR PDFs with PdfCraft's own engine, from Claude (Windows, macOS, Linux).",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "pdfcraft-mcp-server": "dist/index.js"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsc && node scripts/bundle.mjs",
+    "start": "node dist/index.js",
+    "test": "vitest run",
+    "test:e2e": "node scripts/e2e.mjs",
+    "pack:mcpb": "npm run build && npx -y @anthropic-ai/mcpb pack . pdfcraft-mcp-server.mcpb"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "pdfcraft",
+    "pdf",
+    "split-pdf",
+    "merge-pdf",
+    "redact",
+    "pdf-forms",
+    "ocr",
+    "pdf-a",
+    "windows",
+    "macos",
+    "linux"
+  ],
+  "author": "Jhon Supelano (https://github.com/jhonsu01)",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jhonsu01/pdfcraft-mcp-server.git"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "os": [
+    "win32",
+    "darwin",
+    "linux"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "esbuild": "^0.28.2",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.3"
+  }
+}
