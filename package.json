@@ -1,6 +1,6 @@
 {
   "name": "pdfcraft-mcp-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MCP server for PdfCraft: read, split, merge, organize, watermark, protect, redact, fill, sign, convert, compress and OCR PDFs with PdfCraft's own engine, from Claude (Windows, macOS, Linux).",
   "type": "module",
   "main": "dist/index.js",
@@ -15,7 +15,8 @@
     "start": "node dist/index.js",
     "test": "vitest run",
     "test:e2e": "node scripts/e2e.mjs",
-    "pack:mcpb": "npm run build && npx -y @anthropic-ai/mcpb pack . pdfcraft-mcp-server.mcpb"
+    "pack:mcpb": "npm run build && npx -y @anthropic-ai/mcpb pack . pdfcraft-mcp-server.mcpb",
+    "pack:codex": "npm run build && node scripts/pack-codex.mjs"
   },
   "keywords": [
     "mcp",
@@ -55,5 +56,15 @@
     "esbuild": "^0.28.2",
     "typescript": "^5.9.3",
     "vitest": "^5.0.3"
+  },
+  "codex": {
+    "shortDescription": "Merge, split, OCR, sign and convert PDFs with your local PdfCraft",
+    "category": "Productivity",
+    "brandColor": "#DC2626",
+    "defaultPrompt": [
+      "Merge these PDFs and add page numbers",
+      "Make this scanned PDF searchable with OCR",
+      "Convert this PDF to Word and reduce its file size"
+    ]
   }
 }

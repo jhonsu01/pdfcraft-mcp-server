@@ -98,6 +98,14 @@ Las posiciones y tamaños van en **puntos** (1/72 de pulgada) desde la **esquina
 2. Haz doble clic (o arrástralo a Claude Desktop → *Configuración → Extensiones*) y pulsa **Instalar**.
 3. Opcional: si PdfCraft no está en una ubicación estándar, indica su carpeta o la ruta de `pdfcraft-cli` en la configuración de la extensión. También puedes limitarlo a una sola carpeta.
 
+### Codex (OpenAI)
+
+**Recomendado — el marketplace (recibe actualizaciones):** *Complementos → Añadir → Añadir marketplace*, origen `jhonsu01/craft-marketplace`, referencia `main`, y luego instala **PdfCraft Bridge** desde **Craft Bridges** ([craft-marketplace](https://github.com/jhonsu01/craft-marketplace)). Las versiones nuevas llegan al actualizar el marketplace. O sube el zip (Codex lo guarda en tu cuenta y rechaza un zip más nuevo con el mismo nombre):
+
+1. Descarga `pdfcraft-mcp-server-<versión>-codex.zip` de la [última versión](https://github.com/jhonsu01/pdfcraft-mcp-server/releases/latest).
+2. En Codex: *Complementos → Añadir → Nuevo complemento*, elige el zip y pulsa **Añadir complemento**.
+3. Codex arranca el servidor con `node`, así que Node.js ≥ 20 debe estar en el `PATH`. Si PdfCraft no está en una ubicación estándar, define `PDFCRAFT_DIR` o `PDFCRAFT_CLI` como variables de entorno del sistema (Codex no tiene formulario de configuración para complementos locales).
+
 ### Claude Code / otros clientes MCP
 
 ```bash
@@ -142,6 +150,7 @@ npm run build       # TypeScript + bundle de un solo archivo (dist/bundle.cjs)
 npm test            # pruebas unitarias (lógica de rutas de Windows, macOS y Linux)
 npm run test:e2e    # 28 pruebas de extremo a extremo por MCP stdio real (PDF sintéticos)
 npm run pack:mcpb   # pdfcraft-mcp-server.mcpb
+npm run pack:codex  # zip de complemento para Codex
 ```
 
 Prueba de Linux en Docker (descomprime antes `pdfcraft-<versión>-linux-x86_64.tar.gz`):

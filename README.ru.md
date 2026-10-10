@@ -98,6 +98,14 @@
 2. Дважды щёлкните по нему (или перетащите в Claude Desktop → *Настройки → Расширения*) и нажмите **Установить**.
 3. Необязательно: если PdfCraft установлен не в стандартное место, укажите его папку или путь к `pdfcraft-cli` в настройках расширения. Также можно ограничить его одной папкой.
 
+### Codex (OpenAI)
+
+**Рекомендуется — маркетплейс (получает обновления):** *Плагины → Добавить → Добавить маркетплейс*, источник `jhonsu01/craft-marketplace`, ссылка `main`, затем установите **PdfCraft Bridge** из **Craft Bridges** ([craft-marketplace](https://github.com/jhonsu01/craft-marketplace)). Новые версии приходят при обновлении маркетплейса. Или загрузите zip (Codex сохранит его в вашей учётной записи и отклонит более новый zip с тем же именем):
+
+1. Скачайте `pdfcraft-mcp-server-<версия>-codex.zip` из [последнего релиза](https://github.com/jhonsu01/pdfcraft-mcp-server/releases/latest).
+2. В Codex: *Плагины → Добавить → Новый плагин*, выберите zip и нажмите **Добавить плагин**.
+3. Codex запускает сервер через `node`, поэтому Node.js ≥ 20 должен быть в `PATH`. Если PdfCraft установлен не в стандартное место, задайте `PDFCRAFT_DIR` или `PDFCRAFT_CLI` как системные переменные окружения (у Codex нет формы настроек для локальных плагинов).
+
 ### Claude Code / другие MCP-клиенты
 
 ```bash
@@ -142,6 +150,7 @@ npm run build       # TypeScript + бандл в один файл (dist/bundle.
 npm test            # модульные тесты (логика путей Windows, macOS и Linux)
 npm run test:e2e    # 28 сквозных проверок через реальный MCP stdio (синтетические PDF)
 npm run pack:mcpb   # pdfcraft-mcp-server.mcpb
+npm run pack:codex  # zip-плагин для Codex
 ```
 
 Проверка Linux в Docker (сначала распакуйте `pdfcraft-<версия>-linux-x86_64.tar.gz`):

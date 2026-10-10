@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.1] - 2026-10-10
+### Added
+- Codex (OpenAI) plugin: each release also ships `pdfcraft-mcp-server-<version>-codex.zip` with
+  `.codex-plugin/plugin.json` and `.mcp.json` (a local stdio server, `node ./dist/bundle.cjs`), built by
+  `npm run pack:codex` from the same bundle and manifest as the `.mcpb`. The plugin is also listed in the
+  [Craft Bridges](https://github.com/jhonsu01/craft-marketplace) Codex marketplace, which delivers updates.
+- No changes to the tools.
+### Verified
+- Windows 11 and Debian 12 (Docker): all end-to-end checks pass; the `.mcpb` and the Codex plugin tested
+  unpacked; the plugin installed from the marketplace with the Codex CLI and a tool call answered.
+
 ## [1.0.0] - 2026-10-09
 ### Added
 - MCP server on PdfCraft's own headless engine (`pdfcraft-cli mcp`), one private engine per job, calls sent
