@@ -1,6 +1,6 @@
 {
   "name": "pdfcraft-mcp-server",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "MCP server for PdfCraft: read, split, merge, organize, watermark, protect, redact, fill, sign, convert, compress and OCR PDFs with PdfCraft's own engine, from Claude (Windows, macOS, Linux).",
   "type": "module",
   "main": "dist/index.js",

@@ -1,7 +1,7 @@
 {
   "manifest_version": "0.3",
   "name": "pdfcraft-mcp-server",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "display_name": "PdfCraft Bridge",
   "description": "Read, split, merge, organize, watermark, protect, redact, fill, sign, convert, compress and OCR PDFs with the PdfCraft editor installed on Windows, macOS or Linux. Not affiliated with PdfCraft or Storytold.",
   "long_description": "PdfCraft Bridge lets Claude work on PDFs with the PdfCraft you already have installed on Windows, macOS or Linux (tested with 0.4.0), the open-source, Acrobat-class editor written in Rust.\n\n- **Read**: document info, page sizes, fonts, security, signatures; text by page; pages as PNG / JPEG / TIFF.\n- **Pages**: split (every N pages, before pages, by bookmarks or size), merge with page ranges, extract, insert, duplicate, rotate, move, delete, crop, page labels, metadata.\n- **Add**: text and picture watermarks, headers and footers with page numbers and Bates numbers, backgrounds, text boxes, images, links.\n- **Secure**: passwords and permissions (AES-256), true redaction of words, patterns (email, phone, SSN, card, dates) and areas, hidden-information removal, digital signatures.\n- **Forms**: list, auto-detect, fill and flatten.\n- **Convert**: Word, HTML, RTF, text, images, PDF/A; create PDFs from images or text; reduce file size; OCR; compare versions.\n- **Everything else**: run any of PdfCraft's 131 engine tools (comments, bookmarks, accessibility, measurements, JavaScript...).\n\nThe connector drives PdfCraft's own headless engine (pdfcraft-cli). Everything runs locally with no network access; files are never overwritten unless you ask. PdfCraft is an open-source project by Storytold; this connector is not affiliated with or endorsed by them.",
