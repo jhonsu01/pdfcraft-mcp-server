@@ -148,7 +148,7 @@ claude mcp add pdfcraft -- node "$PWD/dist/bundle.cjs"
 ```bash
 npm run build       # TypeScript + 单文件打包（dist/bundle.cjs）
 npm test            # 单元测试（Windows、macOS、Linux 路径逻辑）
-npm run test:e2e    # 通过真实 MCP stdio 的 28 项端到端检查（合成 PDF）
+npm run test:e2e    # 通过真实 MCP stdio 的 29 项端到端检查（合成 PDF）
 npm run pack:mcpb   # pdfcraft-mcp-server.mcpb
 npm run pack:codex  # Codex 插件 zip
 ```

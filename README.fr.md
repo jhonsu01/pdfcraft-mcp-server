@@ -148,7 +148,7 @@ claude mcp add pdfcraft -- node "$PWD/dist/bundle.cjs"
 ```bash
 npm run build       # TypeScript + bundle en un seul fichier (dist/bundle.cjs)
 npm test            # tests unitaires (logique de chemins Windows, macOS et Linux)
-npm run test:e2e    # 28 tests de bout en bout via MCP stdio réel (PDF synthétiques)
+npm run test:e2e    # 29 tests de bout en bout via MCP stdio réel (PDF synthétiques)
 npm run pack:mcpb   # pdfcraft-mcp-server.mcpb
 npm run pack:codex  # zip de plugin pour Codex
 ```

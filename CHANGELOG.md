@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.0.2] - 2026-10-13
+### Added
+- Every result that names output files now carries `files_markdown`: ready-made links (percent-encoded `file:///`
+  URLs) to each file and folder written, and the server instructions ask the assistant to show them as given. Paths
+  with spaces, accents or parentheses no longer break the links, so agent apps (Codex, SunsamCode, Claude...) can
+  open every output from the chat, also when a tool writes many files.
+### Verified
+- Windows 11 and Debian 12 (Docker): 29/29 end-to-end checks each (new: every `files_markdown` link is a valid
+  `file:///` URL to an existing output); the `.mcpb` and the Codex plugin tested unpacked.
+
 ## [1.0.1] - 2026-10-10
 ### Added
 - Codex (OpenAI) plugin: each release also ships `pdfcraft-mcp-server-<version>-codex.zip` with

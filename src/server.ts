@@ -5,6 +5,7 @@ import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { registerAdvancedTools } from './tools/advanced.js';
 import { registerContentTools } from './tools/content.js';
 import { registerPageTools } from './tools/pages.js';
+import { LINK_INSTRUCTIONS } from './links.js';
 
 /** serverInfo.version comes from package.json (reachable as ../package.json from dist/ and src/). */
 export function readPackageVersion(): string {
@@ -28,7 +29,9 @@ export function createServer(): McpServer {
         'passwords, redaction, forms, digital signatures, conversion to Word / HTML / RTF / text / images / PDF/A, file-size reduction, ' +
         'OCR and comparison. All paths must be absolute; files are never overwritten unless overwrite is true. Positions are in points ' +
         '(1/72 inch) from the top-left of the page. Call get_pdfcraft_status first if unsure PdfCraft is installed; list_pdf_tools and ' +
-        'run_pdf_tools reach all 131 engine tools (comments, bookmarks, links, accessibility, measurements, JavaScript...).',
+        'run_pdf_tools reach all 131 engine tools (comments, bookmarks, links, accessibility, measurements, JavaScript...).' +
+        ' ' +
+        LINK_INSTRUCTIONS,
     },
   );
   registerPageTools(server);

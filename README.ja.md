@@ -148,7 +148,7 @@ claude mcp add pdfcraft -- node "$PWD/dist/bundle.cjs"
 ```bash
 npm run build       # TypeScript + 単一ファイルバンドル（dist/bundle.cjs）
 npm test            # 単体テスト（Windows・macOS・Linux のパス処理）
-npm run test:e2e    # 実際の MCP stdio を通した 28 項目のエンドツーエンド検証（合成 PDF）
+npm run test:e2e    # 実際の MCP stdio を通した 29 項目のエンドツーエンド検証（合成 PDF）
 npm run pack:mcpb   # pdfcraft-mcp-server.mcpb
 npm run pack:codex  # Codex 用プラグイン zip
 ```
